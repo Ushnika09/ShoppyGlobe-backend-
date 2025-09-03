@@ -24,7 +24,7 @@ connectDb()
 app.use("/api/products", ProductRoutes);
 app.use("/api/auth", UserRoutes);
 
-app.use("api/cart", CartRoutes);
+app.use("/api/cart", CartRoutes);
 
 
 app.get("/",(req,res)=>{
