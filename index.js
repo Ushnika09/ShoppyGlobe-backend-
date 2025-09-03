@@ -10,7 +10,7 @@ const app=express()
 
 // ✅ Allow requests from your frontend
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -24,7 +24,7 @@ connectDb()
 app.use("/api/products", ProductRoutes);
 app.use("/api/auth", UserRoutes);
 
-app.use("/cart", CartRoutes);
+app.use("api/cart", CartRoutes);
 
 
 app.get("/",(req,res)=>{
